@@ -12,6 +12,8 @@
     "cSpell.words": [
         "Containerfile",
         "devenv",
+        "devuser",
+        "distro",
         "doas",
         "libgcc",
         "libintl",

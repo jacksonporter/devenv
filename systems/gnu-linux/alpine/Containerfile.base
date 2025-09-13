@@ -1,0 +1,14 @@
+FROM public.ecr.aws/docker/library/alpine:latest
+
+RUN apk update \
+    && apk upgrade \
+    && apk add --no-cache \
+        bash \
+        zsh \
+        curl \
+    && adduser -D -h /home/devuser devuser \
+    && mkdir /workdir \
+    && chown devuser:devuser /workdir
+
+USER devuser
+WORKDIR /workdir
