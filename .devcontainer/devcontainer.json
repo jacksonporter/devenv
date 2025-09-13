@@ -1,0 +1,22 @@
+//devcontainer.json
+{
+    "name": "Mise - Alpine",
+    "build": {
+        "dockerfile": "Containerfile",
+        "target": "build"
+    },
+    "settings": {
+        "terminal.integrated.shell.linux": "/bin/zsh"
+    },
+    "postStartCommand": "./post-start.sh",
+    "postCreateCommand": "./post-create.sh",
+    "customizations": {
+        "vscode": {
+            "settings": {},
+            "extensions": [
+                
+            ]
+        }
+    }
+    // "remoteUser": "root"
+}

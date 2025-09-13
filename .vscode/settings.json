@@ -1,0 +1,27 @@
+{
+    "java.jdt.ls.java.home": "/home/overlorde/.local/share/mise/installs/java/25.0.0",
+    "java.import.gradle.java.home": "/home/overlorde/.local/share/mise/installs/java/25.0.0",
+    "go.goroot": "/home/overlorde/.local/share/mise/installs/go/1.25.1",
+    "debug.javascript.defaultRuntimeExecutable": {
+        "pwa-node": "/home/overlorde/.local/share/mise/shims/node"
+    },
+    "python.defaultInterpreterPath": "/home/overlorde/.local/share/mise/installs/python/3.13.7/bin/python",
+    "go.alternateTools": {
+        "go": "/home/overlorde/.local/share/mise/shims/go"
+    },
+    "cSpell.words": [
+        "Containerfile",
+        "devenv",
+        "doas",
+        "libgcc",
+        "libintl",
+        "libstdc",
+        "lttng",
+        "precommands",
+        "pwsh",
+        "terminfo",
+        "tzdata",
+        "userspace"
+    ],
+    "shellcheck.executablePath": "/home/overlorde/.local/share/mise/shims/shellcheck"
+}

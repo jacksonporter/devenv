@@ -1,0 +1,19 @@
+FROM public.ecr.aws/docker/library/alpine:latest
+
+RUN apk update \
+    && apk upgrade -y \
+    && apk add --no-cache \
+        zsh \
+        ca-certificates \
+        less \
+        ncurses-terminfo-base \
+        krb5-libs \
+        libgcc \
+        libintl \
+        libssl3 \
+        libstdc++ \
+        tzdata \
+        userspace-rcu \
+        zlib \
+        icu-libs \
+        curl

@@ -1,0 +1,13 @@
+[tools]
+deno = "latest"
+ruby = "latest"
+bun = "latest"
+python = "latest"
+go = "latest"
+rust = "latest"
+java = "latest"
+node = "latest"
+erlang = "latest"
+zig = "latest"
+elixir = "latest"
+shellcheck = "latest"
