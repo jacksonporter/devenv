@@ -16,6 +16,7 @@ podman \
         --platform "${image_platform}" \
         --rm \
         -it \
+        --security-opt seccomp=unconfined \
         -v "${ROOT_LOCATION}:${WORKDIR_LOCATION}" \
         --workdir ${WORKDIR_LOCATION} \
         --entrypoint /bin/zsh \
@@ -48,13 +49,11 @@ test_distro() {
     printf ">>> Testing distro: %s\n" "${distro}"
 
     cd "${ROOT_LOCATION}/systems/gnu-linux/${distro}" || exit 1
-    for linux_arch in amd64 arm64; do
-        image_platform="linux/${linux_arch}"
-        image_tag="devenv-test-${distro}-${linux_arch}"
-        
-        build_container "${image_platform}" "${image_tag}"
-        test_container "${image_platform}" "${image_tag}"
-    done
+    image_platform="linux/${linux_arch}"
+    image_tag="devenv-test-${distro}-${linux_arch}"
+    
+    build_container "${image_platform}" "${image_tag}"
+    test_container "${image_platform}" "${image_tag}"
     cd -
 
     printf ">>> Finished testing distro: %s\n" "${distro}"

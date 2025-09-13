@@ -1,14 +1,24 @@
 FROM public.ecr.aws/docker/library/alpine:latest
 
-RUN apk update \
-    && apk upgrade \
-    && apk add --no-cache \
+# Install base dependencies and sudo
+RUN apk add --no-cache \
         bash \
         zsh \
         curl \
-    && adduser -D -h /home/devuser devuser \
-    && mkdir /workdir \
-    && chown devuser:devuser /workdir
+        git \
+        sudo shadow \
+    \
+    # Create non-root user with zsh as default shell
+    && adduser -D -h /home/devuser -s /bin/zsh devuser \
+    \
+    # Give devuser passwordless sudo
+    && echo "devuser ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers \
+    \
+    # Create workdir owned by devuser
+    && install -d -o devuser -g devuser /workdir \
+    \
+    # Fix sudo nosuid issue by ensuring setuid bit
+    && chmod u+s /usr/bin/sudo
 
 USER devuser
 WORKDIR /workdir
