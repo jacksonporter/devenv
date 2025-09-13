@@ -37,6 +37,8 @@ main() {
             exit 1
             ;;
     esac
+
+    install_bootstrap_core
 }
 
 main "$@"

@@ -21,7 +21,8 @@ main() {
         bash \
         zsh \
         curl \
-        git
+        git \
+        build-base
 }
 
 main "$@"

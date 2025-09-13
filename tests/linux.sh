@@ -15,7 +15,6 @@ podman \
     run \
         --platform "${image_platform}" \
         --rm \
-        -it \
         --security-opt seccomp=unconfined \
         -v "${ROOT_LOCATION}:${WORKDIR_LOCATION}" \
         --workdir ${WORKDIR_LOCATION} \
