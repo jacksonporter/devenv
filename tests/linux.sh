@@ -48,6 +48,19 @@ test_distro() {
     distro=$1
     printf ">>> Testing distro: %s\n" "${distro}"
 
+    case $(uname -m) in
+        x86_64|amd64)
+            linux_arch="amd64"
+            ;;
+        aarch64|arm64)
+            linux_arch="arm64"
+            ;;
+        *)
+            printf "Unsupported architecture: %s\n" "$(uname -m)"
+            return 1
+            ;;
+    esac
+
     cd "${ROOT_LOCATION}/systems/gnu-linux/${distro}" || exit 1
     image_platform="linux/${linux_arch}"
     image_tag="devenv-test-${distro}-${linux_arch}"
