@@ -29,6 +29,7 @@ main() {
         zsh \
         curl \
         git \
+        unzip \
         build-base \
         zlib-dev \
         zlib \
@@ -40,7 +41,14 @@ main() {
         ncurses-dev \
         readline-dev \
         openssl-dev \
-        sqlite-dev
+        sqlite-dev \
+        gcompat \
+        libc6-compat \
+        libstdc++ \
+        libstdc++-dev
+
+    # Core mise Deno has issues with alpine, use the legacy asdf plugin
+    mise plugins install deno https://github.com/asdf-community/asdf-deno
 }
 
 main "$@"

@@ -19,6 +19,7 @@ podman \
         -v "${ROOT_LOCATION}:${WORKDIR_LOCATION}" \
         --workdir ${WORKDIR_LOCATION} \
         --entrypoint /bin/zsh \
+        -e MISE_VERBOSE=1 \
         ${image_tag} \
         -c 'curl https://mise.run/zsh | sh && source ~/.zshrc && ${BOOTSTRAP_SCRIPT_LOCATION}'
 EOT

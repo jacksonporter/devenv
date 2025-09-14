@@ -6,7 +6,8 @@ RUN apk add --no-cache \
         zsh \
         curl \
         git \
-        sudo shadow \
+        sudo \
+        shadow \
     \
     # Create non-root user with zsh as default shell
     && adduser -D -h /home/devuser -s /bin/zsh devuser \

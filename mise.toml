@@ -1,2 +1,4 @@
 [tools]
-python = "latest"
+groovy = "latest"
+kotlin = "latest"
+# python = "latest"
